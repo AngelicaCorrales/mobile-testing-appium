@@ -13,7 +13,7 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>6.14.3</version>
+            <version>7.8.0</version>
             <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
@@ -26,7 +26,7 @@
         <dependency>
             <groupId>io.appium</groupId>
             <artifactId>java-client</artifactId>
-            <version>7.2.0</version>
+            <version>8.3.0</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.tinylog/tinylog -->
         <dependency>
@@ -58,7 +58,7 @@
                 <version>2.19.1</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/SuiteTest.xml</suiteXmlFile>
+                        <suiteXmlFile>src/main/resources/MobileSuite.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

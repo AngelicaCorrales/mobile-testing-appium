@@ -8,7 +8,7 @@ public class MyTest extends BaseMobileTest {
 
     @Test
     public void searchMovieTest(){
-
+        loginScreen.skipSignIn();
 
     }
 }
