@@ -1,9 +1,7 @@
 package Adapter.Bases;
 
 
-import Adapter.Screens.GlobalNavigationScreen;
-import Adapter.Screens.LoginScreen;
-import Adapter.Screens.SearchScreen;
+import Adapter.Screens.*;
 import Core.ConfigCapabilities;
 import Core.MobileAppDriver;
 import io.appium.java_client.AppiumDriver;
@@ -18,6 +16,9 @@ public class BaseMobileTest {
     protected LoginScreen loginScreen;
     protected GlobalNavigationScreen globalNavigationScreen;
     protected SearchScreen searchScreen;
+    protected ProfileScreen profileScreen;
+    protected MovieDetailsScreen movieDetailsScreen;
+    protected WatchlistScreen watchlistScreen;
 
     @BeforeSuite(alwaysRun = true)
     public void SetUp(){
@@ -28,6 +29,9 @@ public class BaseMobileTest {
         loginScreen= new LoginScreen(driver);
         globalNavigationScreen= new GlobalNavigationScreen(driver);
         searchScreen =new SearchScreen(driver);
+        profileScreen= new ProfileScreen(driver);
+        movieDetailsScreen= new MovieDetailsScreen(driver);
+        watchlistScreen= new WatchlistScreen(driver);
     }
 
     @AfterSuite(alwaysRun = true)

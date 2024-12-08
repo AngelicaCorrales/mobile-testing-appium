@@ -15,7 +15,7 @@ public class MyMobileElement {
     public MyMobileElement(AppiumDriver<MobileElement> driver, By locator) {
         this.driver = driver;
         this.locator = locator;
-        this.wait = new WebDriverWait(driver, 10);
+        this.wait = new WebDriverWait(driver, 30);
     }
 
     private MobileElement waitForVisibility() {
@@ -32,5 +32,13 @@ public class MyMobileElement {
 
     public void sendKeys(String text) {
         waitForVisibility().sendKeys(text);
+    }
+
+    public boolean isDisplayed() {
+        try {
+            return waitForVisibility().isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
     }
 }
