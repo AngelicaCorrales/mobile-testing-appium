@@ -12,7 +12,7 @@ public class MobileAppDriver {
 
     public AppiumDriver<MobileElement> GetMoviesAppDriver(DesiredCapabilities capabilities)  {
             try {
-                driver = new AppiumDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+                driver = new AppiumDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 
             } catch (MalformedURLException e) {
                 e.printStackTrace();

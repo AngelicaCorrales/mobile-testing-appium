@@ -14,6 +14,7 @@ public class MyTest extends BaseMobileTest {
         searchScreen.searchMovie("hamilton");
         searchScreen.clickFirstResult();
         Assert.assertEquals(movieDetailsScreen.getMovieTitle(), "Hamilton");
+        Assert.assertEquals(movieDetailsScreen.getMovieOverview(),"The real life of one of America's foremost founding fathers and first Secretary of the Treasury, Alexander Hamilton. Captured live on Broadway from the Richard Rodgers Theater with the original Broadway cast.");
 
         //back to search
         movieDetailsScreen.clickBack();
@@ -28,7 +29,9 @@ public class MyTest extends BaseMobileTest {
         searchScreen.searchMovie("disney");
         searchScreen.clickRandomResult();
         String randomMovieSelected = movieDetailsScreen.getMovieTitle();
+        movieDetailsScreen.scrollDownToAddToWatchlist();
         movieDetailsScreen.clickAddToWatchlist();
+        movieDetailsScreen.clickBack();
         globalNavigationScreen.goToProfileOption();
         profileScreen.clickWatchlist();
         watchlistScreen.clickLastWatchListMovie();
@@ -37,6 +40,33 @@ public class MyTest extends BaseMobileTest {
 
         //delete from watchlist
         movieDetailsScreen.clickAddToWatchlist();
+        movieDetailsScreen.clickBack();
+        watchlistScreen.clickBack();
+    }
+
+    @Test(priority=3)
+    public void rateMovieTest(){
+        globalNavigationScreen.goToSearchOption();
+        searchScreen.searchMovie("interstellar");
+        searchScreen.clickFirstResult();
+        movieDetailsScreen.scrollDownToUsersReviews();
+        movieDetailsScreen.clickRate();
+        rateScreen.addPerfectRate();
+        String message= movieDetailsScreen.getRatingSavedMessage();
+        movieDetailsScreen.clickRateMoreClose();
+
+        Assert.assertEquals(message,"Rating saved");
+
+        //remove rating
+        globalNavigationScreen.goToProfileOption();
+        profileScreen.clickRatings();
+        ratingHistoryScreen.clickMostRecentRating();
+        movieDetailsScreen.scrollDownToUsersReviews();
+        movieDetailsScreen.clickRate();
+        Assert.assertEquals(rateScreen.getYourRatingValue(),"10");
+        rateScreen.clickRemoveRating();
+        movieDetailsScreen.clickBack();
+        ratingHistoryScreen.clickBack();
     }
 }
 

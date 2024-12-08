@@ -6,21 +6,20 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
 
-public class WatchlistScreen extends BaseMobileScreen {
+public class RatingHistoryScreen extends BaseMobileScreen {
 
-    private  MyMobileElement lastWatchlistMovieLayout = new MyMobileElement(driver, By.xpath("(//android.view.ViewGroup[@resource-id=\"com.imdb.mobile:id/primary_view\"])[last()]"));
+    private MyMobileElement mostRecentRatingLayout= new MyMobileElement(driver, By.xpath("(//android.view.ViewGroup[@resource-id=\"com.imdb.mobile:id/primary_view\"])[1]"));
     private  MyMobileElement backButton= new MyMobileElement(driver, By.xpath("//android.widget.ImageButton"));
 
-
-    public WatchlistScreen(AppiumDriver<MobileElement> driver) {
+    public RatingHistoryScreen(AppiumDriver<MobileElement> driver) {
         super(driver);
-    }
-
-    public void clickLastWatchListMovie(){
-        lastWatchlistMovieLayout.click();
     }
 
     public void clickBack(){
         backButton.click();
+    }
+
+    public void clickMostRecentRating(){
+        mostRecentRatingLayout.click();
     }
 }

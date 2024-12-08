@@ -9,11 +9,11 @@ import utils.RandomNumber;
 
 public class SearchScreen extends BaseMobileScreen {
 
-    private final MyMobileElement searchInput = new MyMobileElement(driver, By.id("com.imdb.mobile:id/search_src_text"));
+    private  MyMobileElement searchInput = new MyMobileElement(driver, By.id("com.imdb.mobile:id/search_src_text"));
 
-    private final MyMobileElement moviesFilterButton = new MyMobileElement(driver, By.xpath("//android.widget.TextView[@resource-id=\"com.imdb.mobile:id/instant_filter\" and @text=\"Movies\"]"));
+    private  MyMobileElement moviesFilterButton = new MyMobileElement(driver, By.xpath("//android.widget.TextView[@resource-id=\"com.imdb.mobile:id/instant_filter\" and @text=\"Movies\"]"));
 
-    private final MyMobileElement firstResultLayout= new MyMobileElement(driver, By.xpath("(//android.widget.TextView[@resource-id=\"com.imdb.mobile:id/suggestion\"])[1]"));
+    private  MyMobileElement firstResultLayout= new MyMobileElement(driver, By.xpath("(//android.widget.TextView[@resource-id=\"com.imdb.mobile:id/suggestion\"])[1]"));
 
     private MyMobileElement randomResultLayout;
 

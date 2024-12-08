@@ -19,6 +19,8 @@ public class BaseMobileTest {
     protected ProfileScreen profileScreen;
     protected MovieDetailsScreen movieDetailsScreen;
     protected WatchlistScreen watchlistScreen;
+    protected RateScreen rateScreen;
+    protected RatingHistoryScreen ratingHistoryScreen;
 
     @BeforeSuite(alwaysRun = true)
     public void SetUp(){
@@ -32,6 +34,8 @@ public class BaseMobileTest {
         profileScreen= new ProfileScreen(driver);
         movieDetailsScreen= new MovieDetailsScreen(driver);
         watchlistScreen= new WatchlistScreen(driver);
+        rateScreen= new RateScreen(driver);
+        ratingHistoryScreen= new RatingHistoryScreen(driver);
     }
 
     @AfterSuite(alwaysRun = true)
