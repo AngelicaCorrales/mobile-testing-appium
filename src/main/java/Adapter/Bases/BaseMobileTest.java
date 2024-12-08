@@ -1,21 +1,23 @@
 package Adapter.Bases;
 
 
+import Adapter.Screens.GlobalNavigationScreen;
 import Adapter.Screens.LoginScreen;
+import Adapter.Screens.SearchScreen;
 import Core.ConfigCapabilities;
 import Core.MobileAppDriver;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidElement;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.*;
 
 
 public class BaseMobileTest {
-    protected AppiumDriver<WebElement> driver;
+    protected AppiumDriver<MobileElement> driver;
 
     protected LoginScreen loginScreen;
+    protected GlobalNavigationScreen globalNavigationScreen;
+    protected SearchScreen searchScreen;
 
     @BeforeSuite(alwaysRun = true)
     public void SetUp(){
@@ -24,6 +26,8 @@ public class BaseMobileTest {
         MobileAppDriver mobileAppDriver= new MobileAppDriver();
         driver= mobileAppDriver.GetMoviesAppDriver(desiredCapabilities);
         loginScreen= new LoginScreen(driver);
+        globalNavigationScreen= new GlobalNavigationScreen(driver);
+        searchScreen =new SearchScreen(driver);
     }
 
     @AfterSuite(alwaysRun = true)

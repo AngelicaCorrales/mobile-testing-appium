@@ -1,28 +1,22 @@
 package Adapter.Screens;
 
 import Adapter.Bases.BaseMobileScreen;
+import Core.MyMobileElement;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.By;
 
 public class GlobalNavigationScreen extends BaseMobileScreen {
 
-    @FindBy(id = "com.imdb.mobile:id/navigation_home")
-    private WebElement homeIcon;
+    private MyMobileElement homeIcon= new MyMobileElement(driver, By.id("com.imdb.mobile:id/navigation_home"));
 
-    @FindBy(id="com.imdb.mobile:id/navigation_search_browse")
-    private WebElement searchIcon;
+    private MyMobileElement searchIcon= new MyMobileElement(driver, By.id("com.imdb.mobile:id/navigation_search_browse"));
 
-    @FindBy(id="com.imdb.mobile:id/navigation_video")
-    private WebElement videoIcon;
+    private MyMobileElement videoIcon= new MyMobileElement(driver, By.id("com.imdb.mobile:id/navigation_video"));
 
-    @FindBy(id ="com.imdb.mobile:id/navigation_user_profile")
-    private WebElement profileIcon;
+    private MyMobileElement profileIcon= new MyMobileElement(driver, By.id("com.imdb.mobile:id/navigation_user_profile"));
 
-    public GlobalNavigationScreen(AppiumDriver<WebElement> driver){
+    public GlobalNavigationScreen(AppiumDriver<MobileElement> driver){
         super(driver);
     }
 

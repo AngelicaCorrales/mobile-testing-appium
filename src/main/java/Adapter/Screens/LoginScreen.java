@@ -1,54 +1,28 @@
 package Adapter.Screens;
 
 import Adapter.Bases.BaseMobileScreen;
+import Core.MyMobileElement;
 import io.appium.java_client.AppiumDriver;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import io.appium.java_client.MobileElement;
+import org.openqa.selenium.By;
 
-import java.time.Duration;
-import java.time.temporal.ChronoUnit;
 
 public class LoginScreen extends BaseMobileScreen {
 
-    @FindBy(id = "com.imdb.mobile:id/welcome_dialog_continue")
-    private WebElement continueButton;
+    private MyMobileElement continueButton = new MyMobileElement(driver, By.id("com.imdb.mobile:id/welcome_dialog_continue"));
 
-    @FindBy(id="com.imdb.mobile:id/splash_not_now")
-    private WebElement notNowButton;
+    private MyMobileElement notNowButton = new MyMobileElement(driver, By.id("com.imdb.mobile:id/splash_not_now"));
 
-    public LoginScreen(AppiumDriver<WebElement> driver) {
+    public LoginScreen(AppiumDriver<MobileElement> driver) {
         super(driver);
     }
 
     public void clickContinue(){
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, 10L);
-            WebElement clickableElement = wait.until(ExpectedConditions.elementToBeClickable(continueButton));
-            if (clickableElement.isDisplayed()) {
-                clickableElement.click();
-            }
-        }catch (NoSuchElementException e){
-            System.out.println("ERROR CLICKING");
-            throw e;
-        }
-        //continueButton.click();
+        continueButton.click();
     }
 
     public void clickNotNow(){
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, 10L);
-            WebElement clickableElement = wait.until(ExpectedConditions.elementToBeClickable(notNowButton));
-            if (clickableElement.isDisplayed()) {
-                clickableElement.click();
-            }
-        }catch (NoSuchElementException e){
-            System.out.println("ERROR CLICKING");
-            throw e;
-        }
-        // notNowButton.click();
+        notNowButton.click();
     }
 
     public void skipSignIn(){
