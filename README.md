@@ -1,7 +1,6 @@
 # Mobile Automation with Appium Challenge
-Mobile Testing with Appium Challenge for Endava interns
 
-## Scenarios
+## Scenarios ✅
 #### 1. Automate the following test case:
 - Given the application IMDB 
 - Click On Skip Login 
@@ -29,35 +28,18 @@ Mobile Testing with Appium Challenge for Endava interns
 - And select a rate
 - Then a saved message must be displayed
 
+## Required items 🧰
+- **Android Studio Device Manager** to emulate an Android device.
+- **IDE Intellij** to build the test framework.
+- **Appium**, which is a mobile automation testing tool.
+- **Appium Inspector**, a tool that helps streamline the process of creating and inspecting automation scripts for mobile apps.
+- **IMDb App** installed on the Android device.
 
-## Examination criteria
-Examination criteria will be based on 3 types of items: mandatory, forbidden and bonus points. 
+## Project Structure ⚙️
+- src/main contains screens and their user interactions, and capabilities related files to start a session.
+- src/test contains test cases and test data related files.
 
-Proper use/application/implementation of these will result in the best qualification, while 
-improper application will subtract points. 
+## Important note ℹ️
+- src/test/resources/TestData/testData.json contains valid user credentials to sign in with IMDb. You should pre-create an account and use your credentials to run the tests.
 
-Sharing solutions/implementations/any code between training participants is strictly forbidden 
-and will result in full point deduction for that requirement.
 
-If you need help feel free to reach me through Teams.
-
-## Mandatory
-- Best locator strategies 
-- Page object 
-- Base page 
-
-## Forbidden
-- Thread.sleep()
-- Positional XPath 
-- Code duplication 
-- Hard-coded data/values
-
-## Bonus points
-- You can previously create an account and manually login, this way the account would be already attached once you login 
-- Create a new test of a flow of you choice 
-- Screenshot capture upon test failure 
-- Cloud emulators/simulators integration 
-- Readme file explaining your solution / the way you approached it
-
-## Notes
-- Consider downloading the following mobile testing project or create yours from scratch
