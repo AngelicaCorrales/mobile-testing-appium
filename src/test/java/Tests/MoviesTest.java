@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
-public class MyTest extends BaseMobileTest {
+public class MoviesTest extends BaseMobileTest {
 
     @Test(priority = 1)
     public void searchMovieTest(){
