@@ -1,4 +1,4 @@
-package Adapter.Bases;
+package Tests;
 
 
 import Adapter.Screens.*;
@@ -8,10 +8,16 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.*;
+import utils.ConfigManager;
+import utils.DataReader;
 
 
 public class BaseMobileTest {
     protected AppiumDriver<MobileElement> driver;
+
+    protected final DataReader testResult = new DataReader(ConfigManager.getProperty("testResult"));
+    protected final DataReader testData = new DataReader(ConfigManager.getProperty("testData"));
+
 
     protected LoginScreen loginScreen;
     protected GlobalNavigationScreen globalNavigationScreen;

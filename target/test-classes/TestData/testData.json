@@ -1,0 +1,16 @@
+{
+  "valid_user": {
+    "email": "angelicacq.testing@gmail.com",
+    "password": "testingimdb"
+  },
+  "search_movie_1": {
+    "input": "hamilton"
+  },
+  "search_movie_2": {
+    "input": "disney"
+  },
+  "search_movie_3": {
+    "input": "interstellar"
+  }
+
+}

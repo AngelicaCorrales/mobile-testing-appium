@@ -1,20 +1,25 @@
 package Tests;
 
-import Adapter.Bases.BaseMobileTest;
+import dto.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import static constants.MoviesConstants.*;
 
 
 public class MoviesTest extends BaseMobileTest {
 
     @Test(priority = 1)
     public void searchMovieTest(){
+        Search search= testData.getData(SEARCH_MOVIE_1, Search.class);
+        Movie movie= testResult.getData(SUCCESS_MOVIE_1, Movie.class);
+
         loginScreen.skipSignIn();
         globalNavigationScreen.goToSearchOption();
-        searchScreen.searchMovie("hamilton");
+        searchScreen.searchMovie(search.getInput());
         searchScreen.clickFirstResult();
-        Assert.assertEquals(movieDetailsScreen.getMovieTitle(), "Hamilton");
-        Assert.assertEquals(movieDetailsScreen.getMovieOverview(),"The real life of one of America's foremost founding fathers and first Secretary of the Treasury, Alexander Hamilton. Captured live on Broadway from the Richard Rodgers Theater with the original Broadway cast.");
+        Assert.assertEquals(movieDetailsScreen.getMovieTitle(), movie.getTitle());
+        Assert.assertEquals(movieDetailsScreen.getMovieOverview(),movie.getOverview());
 
         //back to search
         movieDetailsScreen.clickBack();
@@ -22,11 +27,14 @@ public class MoviesTest extends BaseMobileTest {
 
     @Test(priority = 2)
     public void addToWatchListTest(){
+        Search search= testData.getData(SEARCH_MOVIE_2, Search.class);
+        User user= testData.getData(VALID_USER,User.class);
+
         globalNavigationScreen.goToProfileOption();
         profileScreen.clickSignIn();
-        loginScreen.loginWithImdb("email","password");
+        loginScreen.loginWithImdb(user.getEmail(), user.getPassword());
         globalNavigationScreen.goToSearchOption();
-        searchScreen.searchMovie("disney");
+        searchScreen.searchMovie(search.getInput());
         searchScreen.clickRandomResult();
         String randomMovieSelected = movieDetailsScreen.getMovieTitle();
         movieDetailsScreen.clickAddToWatchlist();
@@ -45,8 +53,12 @@ public class MoviesTest extends BaseMobileTest {
 
     @Test(priority=3)
     public void rateMovieTest(){
+        Search search= testData.getData(SEARCH_MOVIE_3, Search.class);
+        UIMessage ratingMessage= testResult.getData(SUCCESS_RATING_MESSAGE, UIMessage.class);
+        Rating rating= testResult.getData(YOUR_RATING_10, Rating.class);
+
         globalNavigationScreen.goToSearchOption();
-        searchScreen.searchMovie("interstellar");
+        searchScreen.searchMovie(search.getInput());
         searchScreen.clickFirstResult();
         movieDetailsScreen.scrollDownToUsersReviews();
         movieDetailsScreen.clickRate();
@@ -54,7 +66,7 @@ public class MoviesTest extends BaseMobileTest {
         String message= movieDetailsScreen.getRatingSavedMessage();
         movieDetailsScreen.clickRateMoreClose();
 
-        Assert.assertEquals(message,"Rating saved");
+        Assert.assertEquals(message,ratingMessage.getMessage());
 
         //remove rating
         globalNavigationScreen.goToProfileOption();
@@ -62,7 +74,7 @@ public class MoviesTest extends BaseMobileTest {
         ratingHistoryScreen.clickMostRecentRating();
         movieDetailsScreen.scrollDownToUsersReviews();
         movieDetailsScreen.clickRate();
-        Assert.assertEquals(rateScreen.getYourRatingValue(),"10");
+        Assert.assertEquals(rateScreen.getYourRatingValue(),rating.getValue());
         rateScreen.clickRemoveRating();
         movieDetailsScreen.clickBack();
         ratingHistoryScreen.clickBack();

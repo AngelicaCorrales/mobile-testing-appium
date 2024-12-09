@@ -1,0 +1,16 @@
+{
+  "valid_user": {
+    "email": "my_email",
+    "password": "my_password"
+  },
+  "search_movie_1": {
+    "input": "hamilton"
+  },
+  "search_movie_2": {
+    "input": "disney"
+  },
+  "search_movie_3": {
+    "input": "interstellar"
+  }
+
+}
