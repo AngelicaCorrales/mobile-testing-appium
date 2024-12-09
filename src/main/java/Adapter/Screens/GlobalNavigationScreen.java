@@ -16,6 +16,8 @@ public class GlobalNavigationScreen extends BaseMobileScreen {
 
     private  MyMobileElement profileIcon= new MyMobileElement(driver, By.id("navigation_user_profile"));
 
+    private MyMobileElement closeTipButton= new MyMobileElement(driver, By.id("com.imdb.mobile:id/exit"));
+
     public GlobalNavigationScreen(AppiumDriver<MobileElement> driver){
         super(driver);
     }
@@ -34,6 +36,10 @@ public class GlobalNavigationScreen extends BaseMobileScreen {
 
     public void goToProfileOption(){
         profileIcon.click();
+    }
+
+    public void closeTip(){
+        closeTipButton.click();
     }
 
 

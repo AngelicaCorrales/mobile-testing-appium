@@ -33,6 +33,7 @@ public class MoviesTest extends BaseMobileTest {
         globalNavigationScreen.goToProfileOption();
         profileScreen.clickSignIn();
         loginScreen.loginWithImdb(user.getEmail(), user.getPassword());
+        globalNavigationScreen.closeTip();
         globalNavigationScreen.goToSearchOption();
         searchScreen.searchMovie(search.getInput());
         searchScreen.clickRandomResult();
