@@ -13,13 +13,11 @@ public class MobileAction {
 
     public MobileAction(AppiumDriver<MobileElement> driver) {
         this.driver=driver;
-        this.wait = new WebDriverWait(driver, 30);
+        this.wait = new WebDriverWait(driver, 60);
 
     }
 
-    public void scrollToElementByText(String text) {
-        WebDriverWait wait = new WebDriverWait(driver, 60);
-
+    public void scrollDownToElementByText(String text) {
         try {
             wait.until(driver -> {
                 try {

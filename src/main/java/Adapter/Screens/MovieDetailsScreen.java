@@ -3,26 +3,27 @@ package Adapter.Screens;
 import Adapter.Bases.BaseMobileScreen;
 import Core.MyMobileElement;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
 
 public class MovieDetailsScreen extends BaseMobileScreen {
 
-    private  MyMobileElement movieTitle= new MyMobileElement(driver, By.id("com.imdb.mobile:id/title"));
+    private  MyMobileElement movieTitle= new MyMobileElement(driver, By.id("title"));
 
-    private MyMobileElement movieOverview= new MyMobileElement(driver, By.id("com.imdb.mobile:id/plot_overview"));
+    private MyMobileElement movieOverview= new MyMobileElement(driver, By.id("plot_overview"));
 
-    private  MyMobileElement addToWatchlistButton = new MyMobileElement(driver, By.id("com.imdb.mobile:id/watchlist_button"));
+    private  MyMobileElement addToWatchlistButton = new MyMobileElement(driver, By.id("watchlist_button"));
 
-    private  MyMobileElement backButton= new MyMobileElement(driver, By.xpath("//android.widget.ImageButton"));
+    private  MyMobileElement backButton= new MyMobileElement(driver, By.className("android.widget.ImageButton"));
 
-    private  MyMobileElement notificationNotNowButton= new MyMobileElement(driver,By.id("com.imdb.mobile:id/notification_not_now"));
+    private  MyMobileElement notificationNotNowButton= new MyMobileElement(driver,By.id("notification_not_now"));
 
-    private  MyMobileElement rateButton = new MyMobileElement(driver,By.xpath("//android.widget.TextView[@resource-id=\"com.imdb.mobile:id/rating_header\" and @text=\"Your Rating\"]"));
+    private  MyMobileElement rateButton = new MyMobileElement(driver, MobileBy.AndroidUIAutomator("new UiSelector().text(\"Your Rating\")"));
 
-    private MyMobileElement ratingSavedMessage= new MyMobileElement(driver, By.id("com.imdb.mobile:id/title"));
+    private MyMobileElement ratingSavedMessage= new MyMobileElement(driver, MobileBy.AndroidUIAutomator("new UiSelector().text(\"Rating saved\")"));
 
-    private MyMobileElement rateMoreCloseButton= new MyMobileElement(driver,By.id("com.imdb.mobile:id/rate_more_like_this_close"));
+    private MyMobileElement rateMoreCloseButton= new MyMobileElement(driver,By.id("rate_more_like_this_close"));
 
     public MovieDetailsScreen(AppiumDriver<MobileElement> driver) {
         super(driver);
@@ -51,11 +52,7 @@ public class MovieDetailsScreen extends BaseMobileScreen {
     }
 
     public void scrollDownToUsersReviews(){
-        actor.scrollToElementByText("User reviews");
-    }
-
-    public void scrollDownToAddToWatchlist(){
-        actor.scrollToElementByText("Add to Watchlist");
+        actor.scrollDownToElementByText("User reviews");
     }
 
     public void clickRate(){

@@ -29,7 +29,6 @@ public class MyTest extends BaseMobileTest {
         searchScreen.searchMovie("disney");
         searchScreen.clickRandomResult();
         String randomMovieSelected = movieDetailsScreen.getMovieTitle();
-        movieDetailsScreen.scrollDownToAddToWatchlist();
         movieDetailsScreen.clickAddToWatchlist();
         movieDetailsScreen.clickBack();
         globalNavigationScreen.goToProfileOption();

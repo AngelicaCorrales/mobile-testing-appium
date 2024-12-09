@@ -8,13 +8,13 @@ import org.openqa.selenium.By;
 
 public class RateScreen extends BaseMobileScreen {
 
-    private  MyMobileElement rating10Button= new MyMobileElement(driver, By.id("com.imdb.mobile:id/star_10"));
+    private  MyMobileElement rating10Button= new MyMobileElement(driver, By.id("star_10"));
 
-    private  MyMobileElement rateButton= new MyMobileElement(driver, By.id("com.imdb.mobile:id/rate_title_button"));
+    private  MyMobileElement rateButton= new MyMobileElement(driver, By.id("rate_title_button"));
 
-    private  MyMobileElement yourRatingValueText= new MyMobileElement(driver, By.id("com.imdb.mobile:id/selected_rating"));
+    private  MyMobileElement yourRatingValueText= new MyMobileElement(driver, By.id("selected_rating"));
 
-    private  MyMobileElement removeRatingButton= new MyMobileElement(driver, By.id("com.imdb.mobile:id/remove_rating"));
+    private  MyMobileElement removeRatingButton= new MyMobileElement(driver, By.id("remove_rating"));
 
     public RateScreen(AppiumDriver<MobileElement> driver) {
         super(driver);

@@ -8,13 +8,13 @@ import org.openqa.selenium.By;
 
 public class GlobalNavigationScreen extends BaseMobileScreen {
 
-    private  MyMobileElement homeIcon= new MyMobileElement(driver, By.id("com.imdb.mobile:id/navigation_home"));
+    private  MyMobileElement homeIcon= new MyMobileElement(driver, By.id("navigation_home"));
 
-    private  MyMobileElement searchIcon= new MyMobileElement(driver, By.id("com.imdb.mobile:id/navigation_search_browse"));
+    private  MyMobileElement searchIcon= new MyMobileElement(driver, By.id("navigation_search_browse"));
 
-    private  MyMobileElement videoIcon= new MyMobileElement(driver, By.id("com.imdb.mobile:id/navigation_video"));
+    private  MyMobileElement videoIcon= new MyMobileElement(driver, By.id("navigation_video"));
 
-    private  MyMobileElement profileIcon= new MyMobileElement(driver, By.id("com.imdb.mobile:id/navigation_user_profile"));
+    private  MyMobileElement profileIcon= new MyMobileElement(driver, By.id("navigation_user_profile"));
 
     public GlobalNavigationScreen(AppiumDriver<MobileElement> driver){
         super(driver);

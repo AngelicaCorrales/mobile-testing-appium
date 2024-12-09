@@ -9,7 +9,7 @@ import org.openqa.selenium.By;
 public class WatchlistScreen extends BaseMobileScreen {
 
     private  MyMobileElement lastWatchlistMovieLayout = new MyMobileElement(driver, By.xpath("(//android.view.ViewGroup[@resource-id=\"com.imdb.mobile:id/primary_view\"])[last()]"));
-    private  MyMobileElement backButton= new MyMobileElement(driver, By.xpath("//android.widget.ImageButton"));
+    private  MyMobileElement backButton= new MyMobileElement(driver, By.className("android.widget.ImageButton"));
 
 
     public WatchlistScreen(AppiumDriver<MobileElement> driver) {
