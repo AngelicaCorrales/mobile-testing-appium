@@ -27,6 +27,9 @@
 - Click on rate
 - And select a rate
 - Then a saved message must be displayed
+  
+![image](https://github.com/user-attachments/assets/db7ed185-76aa-4bfa-9e5d-1af05f9deb28)
+
 
 ## Required items 🧰
 - **Android Studio Device Manager** to emulate an Android device.
